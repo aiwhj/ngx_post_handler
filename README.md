@@ -1,7 +1,9 @@
 nginx post handler
 =====
 [post_handler](https://github.com/aiwhj/post_handler.git) 的 Nginx 版，嵌入了 PHP-embed，能对 HTTP 请求实现拦截，通过 Header 中是否有相应的 key，判断是否允许当次请求。
-做这个的原因是想对 HTTP 大文件上传拦截。php-fpm 默认会直接上传文件，在传递 body 之前，先对 header 进行判断。
+做这个的原因是想对 HTTP 大文件上传拦截。php-fpm 默认会直接上传文件，在传递 body 之前，能先对 header 进行判断。
+
+扩展一下可以做成 Nginx 拓展版的 SAPI，类似 Apache 的 apache2handler。
 
 ## install
 1. 需要 PHP Embed SAPI 的共享库，可以实现通过 `--enable-embed` 编译出来共享库。
